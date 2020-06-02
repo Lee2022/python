@@ -1,0 +1,530 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## for_format_list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "진상 승훈 형주\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = '{}이는 {}(이)와 {}(을)를 좋아해'\n",
+    "pr=s.format('진상','승훈','형주')\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "진상이는 30211번이고 인하대학에 갔어\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = '{}이는 {}번이고 {}대학에 갔어'\n",
+    "pr=s.format('진상',30211,'인하')\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## [문제]햄버거 1개는 4달라"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "햄버거 1개는 4달라\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = '{} {}개는 {}달라'\n",
+    "pr = s.format('햄버거',1,4)\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "햄버거 2개는 8달라\n"
+     ]
+    }
+   ],
+   "source": [
+    "food = '햄버거'\n",
+    "num = 2\n",
+    "price = num * 4\n",
+    "s = '{} {}개는 {}달라'\n",
+    "pr = s.format(food,num,price)\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "메뉴입력 >>햄버거\n",
+      "개수 입력 >>8\n",
+      "햄버거 8개는 32달라\n"
+     ]
+    }
+   ],
+   "source": [
+    "food = input('메뉴입력 >>')\n",
+    "num = int(input('개수 입력 >>'))\n",
+    "price = num * 4\n",
+    "s = '{} {}개는 {}달라'\n",
+    "pr = s.format(food,num,price)\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "햄버거 개수와 가격 입력 >>10 8\n"
+     ]
+    }
+   ],
+   "source": [
+    "menu = list(map(int,input('햄버거 개수와 가격 입력 >>').split()))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "list"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(menu)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(10, 8)"
+      ]
+     },
+     "execution_count": 30,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "menu[0], menu[1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "햄버거 10개는 80달라\n"
+     ]
+    }
+   ],
+   "source": [
+    "price = menu[0] * menu[1]\n",
+    "s = '햄버거 {}개는 {}달라'\n",
+    "pr = s.format(menu[0] ,price)\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "인천여상 3학년 32.12\n"
+     ]
+    }
+   ],
+   "source": [
+    "stu = '%s %d학년 %.2f'\n",
+    "pr = stu%('인천여상',3,32.123)\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "juso = '          인천시 연수구 동춘동    '"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(str, 25)"
+      ]
+     },
+     "execution_count": 62,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(juso), len(juso)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "add = juso.strip()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 65,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'          인천시 연수구 동춘동    '"
+      ]
+     },
+     "execution_count": 65,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "juso"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "('인천시 연수구 동춘동', 11)"
+      ]
+     },
+     "execution_count": 68,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add, len(add)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['인천시', '연수구', '동춘동']"
+      ]
+     },
+     "execution_count": 71,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add.split()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 74,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add.startswith('인천')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 76,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add.endswith('동춘동')"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "metadata": {},
+   "source": [
+    "if 조건식 :\n",
+    "    실행문1\n",
+    "else :\n",
+    "    실행문2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "숫자는 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "num=10\n",
+    "if num==10 :\n",
+    "    print('숫자는 10')\n",
+    "else :\n",
+    "    print('숫자는 10이 아니다')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "짝수\n"
+     ]
+    }
+   ],
+   "source": [
+    "num=10\n",
+    "if num%2 ==0 :\n",
+    "    print('짝수')\n",
+    "else :\n",
+    "    print('홀수')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## [문제]입력을 받아서 짝수(펭수)인지 홀수(워크맨) 인지 알려줌"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "70\n",
+      "펭수\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "if a %2 == 0:\n",
+    "    print(\"펭수\")\n",
+    "else :\n",
+    "    print(\"워크맨\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 88,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "20 22 24 26 28 30 "
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(20,31):\n",
+    "    if i %2 == 0 :\n",
+    "        print(i,end=\" \")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 93,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21 23 25 27 29 \n",
+      "합계 : 0\n"
+     ]
+    }
+   ],
+   "source": [
+    "sum=0\n",
+    "for i in range(20,31):\n",
+    "    if i %2 != 0 :\n",
+    "        print(i,end=\" \")\n",
+    "print()\n",
+    "print(\"합계 :\",sum)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## [문제 만들기] 시작 숫자와 끝 숫자를 입력하여 시작 숫자가 짝수면 +1씩해서 홀수면 +2씩해서 출력\n",
+    "- for,if"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 98,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "시작 숫자와 끝 숫자 입력 >>14 50\n",
+      "15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 "
+     ]
+    }
+   ],
+   "source": [
+    "a = list(map(int,input('시작 숫자와 끝 숫자 입력 >>').split()))\n",
+    "for i in range(a[0],a[1]):\n",
+    "    if a[0] % 2 == 0 :\n",
+    "        print(i+1,end=' ')\n",
+    "    else :\n",
+    "        print(i+2,ends=' ')"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
